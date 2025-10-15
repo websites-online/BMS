@@ -21,4 +21,12 @@ export class App {
   protected closeNav(): void {
     this.navOpen.set(false);
   }
+
+  protected scrollToContact(): void {
+    this.closeNav();
+    const contact = document.getElementById('kontakt');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

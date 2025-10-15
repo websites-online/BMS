@@ -25,6 +25,7 @@
         <a href="#leistungen" (click)="closeNav()">Leistungen</a>
         <a href="#kompetenzen" (click)="closeNav()">Kompetenzen</a>
         <a href="#projekte" (click)="closeNav()">Projekte</a>
+        <a href="#ablauf" (click)="closeNav()">Ablauf</a>
         <a href="#kontakt" (click)="closeNav()">Kontakt</a>
         <a class="cta nav-cta" href="#kontakt" (click)="closeNav()">Anfrage starten</a>
       </div>
@@ -226,7 +227,7 @@
       </div>
     </section>
 
-    <section class="process">
+    <section class="process" id="ablauf">
       <div class="section-headline">
         <span class="section-kicker">Arbeitsweise</span>
         <h2>Mit einem klaren Prozess zur abgesicherten Baustelle</h2>
@@ -298,6 +299,10 @@
       </div>
     </section>
   </main>
+
+  <button class="contact-bubble" type="button" (click)="scrollToContact()" aria-label="Zum Kontaktbereich springen">
+    Kontakt
+  </button>
 
   <footer class="footer">
     <div class="footer-brand">

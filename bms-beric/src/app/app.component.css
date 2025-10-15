@@ -222,6 +222,36 @@
   z-index: 20;
 }
 
+.contact-bubble {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999rem;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(251, 191, 36, 0.9));
+  color: #0f1729;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 18px 40px -24px rgba(249, 115, 22, 0.75);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: none;
+}
+
+.contact-bubble:hover,
+.contact-bubble:focus-visible {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 24px 45px -25px rgba(249, 115, 22, 0.8);
+}
+
+.contact-bubble:focus-visible {
+  outline: 2px solid rgba(191, 219, 254, 0.7);
+  outline-offset: 4px;
+}
+
 .hero-body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1236,6 +1266,10 @@ main {
   .footer-legal {
     justify-content: center;
   }
+
+  .contact-bubble {
+    display: inline-flex;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1344,6 +1378,13 @@ main {
 
   .cta-form button {
     width: 100%;
+  }
+
+  .contact-bubble {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
   }
 }
 
