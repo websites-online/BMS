@@ -504,7 +504,7 @@ main {
 .service-media {
   overflow: hidden;
   border-radius: 1rem;
-  max-height: 13rem;
+  height: clamp(10rem, 26vw, 13rem);
 }
 
 .service-media img {
@@ -1199,14 +1199,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .service-card {
-    padding: 1.35rem;
-  }
-
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-
   .marquee-track {
     animation-duration: 32s;
   }
@@ -1296,6 +1288,31 @@ main {
 
   .service-card {
     padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .service-media {
+    height: 9rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .service-card li {
+    font-size: 0.88rem;
+    padding-left: 1.3rem;
+  }
+
+  .service-card li::before {
+    top: 0.35rem;
+    width: 0.55rem;
+    height: 0.55rem;
   }
 
   .competence {
