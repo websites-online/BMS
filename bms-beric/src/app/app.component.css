@@ -1156,6 +1156,10 @@ main {
     gap: 2rem;
   }
 
+  .hero-visual {
+    display: none;
+  }
+
   .hero-card,
   .hero-card.secondary,
   .competence-overlay {
