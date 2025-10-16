@@ -1,0 +1,96 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(255, 194, 120, 0.25), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1), transparent 45%),
+    #0f1729;
+  color: rgba(248, 250, 252, 0.9);
+  font-family: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.danke-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.danke-container {
+  max-width: 640px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: clamp(2.5rem, 7vw, 3.5rem);
+  text-align: center;
+  box-shadow: 0 35px 80px -45px rgba(6, 12, 30, 0.85);
+  backdrop-filter: blur(18px);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.danke-container h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+}
+
+.danke-container p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.back-link {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #0f1729;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  box-shadow: 0 22px 50px -26px rgba(249, 115, 22, 0.85);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-link::before {
+  content: "←";
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 58px -28px rgba(249, 115, 22, 0.9);
+}
+
+.back-link:focus-visible {
+  outline: 2px solid rgba(191, 219, 254, 0.7);
+  outline-offset: 4px;
+}
+
+@media (max-width: 520px) {
+  .danke-container {
+    padding: 2rem;
+    border-radius: 1.75rem;
+  }
+
+  .danke-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .back-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

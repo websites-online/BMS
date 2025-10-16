@@ -22,23 +22,56 @@
         </div>
       </div>
     </div>
-    <form class="cta-form">
+
+    <!-- 📩 KONTAKTFORMULAR (FormSubmit integriert) -->
+    <form
+      class="cta-form"
+      action="hierMailmitFormSubmitEintragen"
+      method="POST"
+    >
+      <!-- Felder -->
       <label>
         Name
-        <input type="text" name="name" placeholder="Max Mustermann" />
+        <input type="text" name="name" placeholder="Max Mustermann" required />
       </label>
+
       <label>
         Projekt Name
-        <input type="text" name="projekt" placeholder="Autobahnabschnitt, Bauabschnitt..." />
+        <input
+          type="text"
+          name="projekt"
+          placeholder="Autobahnabschnitt, Bauabschnitt..."
+          required
+        />
       </label>
+
       <label>
         E-Mail
-        <input type="email" name="email" placeholder="name@unternehmen.de" />
+        <input
+          type="email"
+          name="email"
+          placeholder="name@unternehmen.de"
+          required
+        />
       </label>
+
       <label>
         Projektbeschreibung
-        <textarea name="beschreibung" rows="4" placeholder="Kurzbeschreibung, Zeitraum, besondere Anforderungen"></textarea>
+        <textarea
+          name="beschreibung"
+          rows="4"
+          placeholder="Kurzbeschreibung, Zeitraum, besondere Anforderungen"
+          required
+        ></textarea>
       </label>
+
+      <!-- ⚙️ FormSubmit Optionen -->
+      <input type="hidden" name="_subject" value="Neue Anfrage über BMS-Beric" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://localhost:4200/danke" />
+      <input type="text" name="_honey" style="display:none" />
+
       <button type="submit">Anfrage senden</button>
     </form>
   </div>
