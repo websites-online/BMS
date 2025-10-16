@@ -259,6 +259,20 @@
   outline-offset: 4px;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

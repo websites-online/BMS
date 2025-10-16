@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
   selector: 'app-landing-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RevealDirective],
   templateUrl: './landing.component.html',
   styleUrls: ['../../app.component.css']
 })
