@@ -1,0 +1,103 @@
+<header class="hero" id="start">
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="brand">
+      <span class="brand-mark">BMS</span>
+      <div class="brand-text">
+        <span class="brand-name">BMS-Beric</span>
+        <span class="brand-subtitle">Bauvorbereitung &amp; Verkehrssicherung</span>
+      </div>
+    </div>
+    <button
+      class="nav-toggle"
+      type="button"
+      (click)="onToggleNav()"
+      [attr.aria-expanded]="navOpen"
+      aria-controls="primary-navigation"
+      aria-label="Navigation umschalten"
+    >
+      <span class="sr-only">Navigation öffnen</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="primary-navigation" [class.open]="navOpen">
+      <a href="#leistungen" (click)="onCloseNav()">Leistungen</a>
+      <a href="#kompetenzen" (click)="onCloseNav()">Kompetenzen</a>
+      <a href="#projekte" (click)="onCloseNav()">Projekte</a>
+      <a href="#ablauf" (click)="onCloseNav()">Ablauf</a>
+      <a href="#kontakt" (click)="onCloseNav()">Kontakt</a>
+      <a class="cta nav-cta" href="#kontakt" (click)="onCloseNav()">Anfrage starten</a>
+    </div>
+  </nav>
+  <div class="nav-backdrop" *ngIf="navOpen" (click)="onCloseNav()" aria-hidden="true"></div>
+
+  <div class="hero-body">
+    <div class="hero-copy">
+      <span class="hero-pill">Spezialisten für Autobahn-Bausicherheit</span>
+      <h1>Wir sichern Ihre Baustelle – schnell, präzise, zuverlässig.</h1>
+      <p>
+        BMS-Beric begleitet Bauvorhaben von der Planung bis zur fertigen Absperrung.
+        Wir sorgen für flüssigen Verkehr, maximale Sicherheit und transparente Abläufe
+        auf Autobahnen und Schnellstraßen in ganz Deutschland.
+      </p>
+      <div class="hero-actions">
+        <a class="cta primary" href="#kontakt">Projekt anfragen</a>
+        <a class="cta ghost" href="#leistungen">Unsere Leistungen</a>
+      </div>
+      <div class="hero-highlights">
+        <div class="highlight">
+          <strong>24/7</strong>
+          <span>Bereitschaft &amp; Einsatz</span>
+        </div>
+        <div class="highlight">
+          <strong>120+</strong>
+          <span>abgesicherte Autobahnkilometer 2023</span>
+        </div>
+        <div class="highlight">
+          <strong>ISO</strong>
+          <span>Zertifizierte Prozesse &amp; Dokumentation</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <span class="card-title">Live-Verkehrsleitsysteme</span>
+        <p>Digitale Fahrstreifeninformation, wechselnde Beschilderung, dynamische Tempozonen.</p>
+        <div class="card-badges">
+          <span>LED</span>
+          <span>GPS</span>
+          <span>Monitoring</span>
+        </div>
+      </div>
+      <div class="hero-card secondary">
+        <span class="card-title">Mobile Schutzwände</span>
+        <p>Stufenweise Montage inklusive Auf- &amp; Abbau unter laufendem Verkehr.</p>
+      </div>
+      <div class="hero-orbit">
+        <span>Baustellenlogistik</span>
+        <span>Verkehrsanalysen</span>
+        <span>Dokumentation</span>
+        <span>Schulungen</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Verkehrsführung</span>
+      <span>Fahrbahnmarkierung</span>
+      <span>Temporäre Beschilderung</span>
+      <span>Sicherheitskonzepte</span>
+      <span>Baustellenbeleuchtung</span>
+      <span>Notfall-Management</span>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <span>Verkehrsführung</span>
+      <span>Fahrbahnmarkierung</span>
+      <span>Temporäre Beschilderung</span>
+      <span>Sicherheitskonzepte</span>
+      <span>Baustellenbeleuchtung</span>
+      <span>Notfall-Management</span>
+    </div>
+  </div>
+</header>

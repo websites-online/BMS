@@ -92,6 +92,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
+  color: #f8fafc;
 }
 
 .brand-subtitle {
@@ -284,6 +285,7 @@
   letter-spacing: 0.16em;
   font-size: 0.72rem;
   backdrop-filter: blur(4px);
+  color: rgba(248, 250, 252, 0.85);
 }
 
 .hero-copy h1 {
