@@ -1,6 +1,7 @@
-<div class="page">
+<div class="page" [class.nav-scrolled]="navScrolled">
   <app-landing-section
     [navOpen]="navOpen"
+    [navScrolled]="navScrolled"
     (toggleNav)="toggleNav()"
     (closeNav)="closeNav()"
   ></app-landing-section>

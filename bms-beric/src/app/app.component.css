@@ -63,12 +63,19 @@
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: clamp(3rem, 8vw, 6rem);
+  transition:
+    padding 0.3s ease,
+    min-height 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 0.875rem;
+  transition: transform 0.3s ease;
 }
 
 .brand-mark {
@@ -82,12 +89,14 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #0f1729;
+  transition: transform 0.3s ease;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
+  transition: transform 0.3s ease;
 }
 
 .brand-name {
@@ -1605,10 +1614,17 @@ main {
 @media (max-width: 768px) {
   :host {
     --nav-height-mobile: clamp(5rem, 15vw, 6.5rem);
+    --nav-height-mobile-shrunk: clamp(4.25rem, 14vw, 5.5rem);
   }
 
   .page {
-    padding-top: var(--nav-height-mobile);
+    --nav-current-height: var(--nav-height-mobile);
+    padding-top: var(--nav-current-height);
+    transition: padding-top 0.3s ease;
+  }
+
+  .page.nav-scrolled {
+    --nav-current-height: var(--nav-height-mobile-shrunk);
   }
 
   .nav {
@@ -1625,17 +1641,37 @@ main {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     box-shadow: 0 18px 40px -32px rgba(15, 23, 42, 0.85);
-    min-height: var(--nav-height-mobile);
+    min-height: var(--nav-current-height);
     width: 100%;
+    padding: 0.75rem clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .nav.nav-scrolled {
+    padding: 0.5rem clamp(1.25rem, 5vw, 1.5rem);
+    background: rgba(8, 12, 24, 0.97);
+    border-bottom-color: rgba(148, 163, 184, 0.28);
+    box-shadow: 0 16px 34px -24px rgba(8, 12, 24, 0.95);
+  }
+
+  .nav.nav-scrolled .brand-mark {
+    transform: scale(0.9);
+  }
+
+  .nav.nav-scrolled .brand-text {
+    transform: translateY(-1px) scale(0.95);
   }
 
   .hero {
     padding: 2.5rem 1.5rem 4rem;
-    padding-top: calc(var(--nav-height-mobile) + 1.5rem);
+    padding-top: 2.5rem;
+  }
+
+  .hero.hero-shrunk {
+    padding-top: 2.25rem;
   }
 
   .nav-links {
-    top: calc(var(--nav-height-mobile) + 1rem);
+    top: calc(var(--nav-current-height) + 1rem);
   }
 
   .hero-body {
@@ -1681,8 +1717,12 @@ main {
     margin-top: 1rem;
   }
 
+  .page.nav-scrolled main {
+    margin-top: 0.75rem;
+  }
+
   main [id] {
-    scroll-margin-top: calc(var(--nav-height-mobile) + 1.75rem);
+    scroll-margin-top: calc(var(--nav-current-height) + 1.5rem);
   }
 
   .service-grid,
@@ -1740,7 +1780,11 @@ main {
 @media (max-width: 520px) {
   .hero {
     padding: 1.75rem 1.25rem 3.5rem;
-    padding-top: calc(var(--nav-height-mobile) + 1.25rem);
+    padding-top: 1.75rem;
+  }
+
+  .hero.hero-shrunk {
+    padding-top: 1.5rem;
   }
 
   .hero-pill {

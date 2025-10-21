@@ -11,6 +11,7 @@ import { RevealDirective } from '../../shared/reveal.directive';
 })
 export class LandingSectionComponent {
   @Input({ required: true }) navOpen = false;
+  @Input() navScrolled = false;
 
   @Output() toggleNav = new EventEmitter<void>();
   @Output() closeNav = new EventEmitter<void>();

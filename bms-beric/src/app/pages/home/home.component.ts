@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContactSectionComponent } from '../../sections/contact/contact.component';
 import { CompetenceSectionComponent } from '../../sections/competence/competence.component';
@@ -25,7 +25,10 @@ import { ServicesSectionComponent } from '../../sections/services/services.compo
   styleUrls: ['../../app.component.css']
 })
 export class HomeComponent {
+  private readonly scrollThreshold = 48;
+
   protected navOpen = false;
+  protected navScrolled = false;
   protected readonly currentYear = new Date().getFullYear();
 
   protected toggleNav(): void {
@@ -41,6 +44,14 @@ export class HomeComponent {
     const contact = document.getElementById('kontakt');
     if (contact) {
       contact.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  protected handleScroll(): void {
+    const shouldShrink = window.scrollY > this.scrollThreshold;
+    if (this.navScrolled !== shouldShrink) {
+      this.navScrolled = shouldShrink;
     }
   }
 }
