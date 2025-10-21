@@ -1614,7 +1614,7 @@ main {
 @media (max-width: 768px) {
   :host {
     --nav-height-mobile: clamp(5rem, 15vw, 6.5rem);
-    --nav-height-mobile-shrunk: clamp(4.25rem, 14vw, 5.5rem);
+    --nav-height-mobile-shrunk: clamp(3.75rem, 12vw, 4.75rem);
   }
 
   .page {
@@ -1647,18 +1647,26 @@ main {
   }
 
   .nav.nav-scrolled {
-    padding: 0.5rem clamp(1.25rem, 5vw, 1.5rem);
+    padding: 0.35rem clamp(1.2rem, 5vw, 1.4rem);
     background: rgba(8, 12, 24, 0.97);
     border-bottom-color: rgba(148, 163, 184, 0.28);
     box-shadow: 0 16px 34px -24px rgba(8, 12, 24, 0.95);
   }
 
   .nav.nav-scrolled .brand-mark {
-    transform: scale(0.9);
+    transform: scale(0.82);
   }
 
   .nav.nav-scrolled .brand-text {
-    transform: translateY(-1px) scale(0.95);
+    transform: translateY(-2px) scale(0.9);
+  }
+
+  .nav.nav-scrolled .brand {
+    transform: translateY(-1px) scale(0.92);
+  }
+
+  .nav.nav-scrolled .nav-toggle {
+    transform: translateY(-1px) scale(0.88);
   }
 
   .hero {
@@ -1667,7 +1675,7 @@ main {
   }
 
   .hero.hero-shrunk {
-    padding-top: 2.25rem;
+    padding-top: 2rem;
   }
 
   .nav-links {
@@ -1718,7 +1726,7 @@ main {
   }
 
   .page.nav-scrolled main {
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
   }
 
   main [id] {
@@ -1784,7 +1792,7 @@ main {
   }
 
   .hero.hero-shrunk {
-    padding-top: 1.5rem;
+    padding-top: 1.35rem;
   }
 
   .hero-pill {
