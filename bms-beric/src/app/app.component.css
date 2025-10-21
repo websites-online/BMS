@@ -648,6 +648,7 @@ main {
 
 .competence-copy h2 {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: #ffffff;
 }
 
 .competence-copy p {
