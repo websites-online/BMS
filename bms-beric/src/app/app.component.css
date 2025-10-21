@@ -539,6 +539,10 @@ main {
   line-height: 1.8;
 }
 
+.projects .section-headline {
+  gap: 0.5rem;
+}
+
 .services .section-headline {
   margin-bottom: clamp(3rem, 6vw, 4rem);
 }
