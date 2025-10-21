@@ -20,6 +20,18 @@ body {
     Helvetica, Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 0.86rem;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
