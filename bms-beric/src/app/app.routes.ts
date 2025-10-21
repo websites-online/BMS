@@ -12,6 +12,16 @@ export const routes: Routes = [
       import('./sections/danke/danke').then((m) => m.Danke)
   },
   {
+    path: 'impressum',
+    loadComponent: () =>
+      import('./pages/impressum/impressum.component').then((m) => m.ImpressumComponent)
+  },
+  {
+    path: 'datenschutz',
+    loadComponent: () =>
+      import('./pages/datenschutz/datenschutz.component').then((m) => m.DatenschutzComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

@@ -8,6 +8,7 @@
   <main>
     <app-services-section></app-services-section>
     <app-competence-section></app-competence-section>
+    <app-safety-section></app-safety-section>
     <app-projects-section></app-projects-section>
     <app-process-section></app-process-section>
     <app-contact-section></app-contact-section>
@@ -29,13 +30,14 @@
     <div class="footer-links">
       <a href="#leistungen">Leistungen</a>
       <a href="#kompetenzen">Kompetenzen</a>
+      <a href="#sicherheit">Sicherheit</a>
       <a href="#projekte">Projekte</a>
       <a href="#kontakt">Kontakt</a>
     </div>
     <div class="footer-legal">
       <span>© {{ currentYear }} BMS-Beric. Alle Rechte vorbehalten.</span>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+      <a routerLink="/impressum">Impressum</a>
+      <a routerLink="/datenschutz">Datenschutz</a>
     </div>
   </footer>
 </div>

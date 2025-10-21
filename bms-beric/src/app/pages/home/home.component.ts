@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ContactSectionComponent } from '../../sections/contact/contact.component';
 import { CompetenceSectionComponent } from '../../sections/competence/competence.component';
 import { LandingSectionComponent } from '../../sections/landing/landing.component';
 import { ProcessSectionComponent } from '../../sections/process/process.component';
 import { ProjectsSectionComponent } from '../../sections/projects/projects.component';
+import { SafetySectionComponent } from '../../sections/safety/safety.component';
 import { ServicesSectionComponent } from '../../sections/services/services.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
   imports: [
+    RouterLink,
     LandingSectionComponent,
     ServicesSectionComponent,
+    SafetySectionComponent,
     CompetenceSectionComponent,
     ProjectsSectionComponent,
     ProcessSectionComponent,
