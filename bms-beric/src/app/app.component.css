@@ -787,40 +787,42 @@ main {
   margin-inline: auto;
 }
 
-.hotline-headline {
-  text-align: left;
-  margin-inline: 0;
+.hotline-only {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.hotline-layout {
+.hotline-shell {
   display: grid;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: center;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  max-width: 34rem;
+  width: 100%;
+  justify-items: center;
 }
 
-.hotline-info {
-  display: grid;
-  gap: 0.85rem;
+.hotline-shell h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: #fef3c7;
 }
 
-.hotline-badge {
+.hotline-icon {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.95rem;
-  border-radius: 999rem;
-  background: rgba(248, 113, 113, 0.18);
-  border: 1px solid rgba(248, 113, 113, 0.45);
-  color: rgba(255, 241, 242, 0.95);
-  font-size: 0.85rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-weight: 600;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.3), rgba(249, 115, 22, 0.25));
+  font-size: 2rem;
 }
 
-.badge-icon {
-  font-size: 1.2rem;
+.hotline-intro {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .hotline-number-card {
@@ -831,6 +833,8 @@ main {
   background: rgba(8, 31, 44, 0.8);
   border: 1px solid rgba(59, 130, 246, 0.35);
   box-shadow: 0 30px 70px -50px rgba(59, 130, 246, 0.55);
+  text-align: center;
+  justify-items: center;
 }
 
 .number-label {
@@ -861,65 +865,32 @@ main {
   color: rgba(226, 232, 240, 0.7);
 }
 
-.hotline-visual {
-  position: relative;
-}
-
-.hotline-visual img {
-  width: 100%;
-  display: block;
-  border-radius: 1.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  box-shadow: 0 45px 90px -60px rgba(59, 130, 246, 0.6);
-  object-fit: cover;
-  max-height: 380px;
-}
-
-.hotline-grid {
-  margin-top: clamp(1.75rem, 3vw, 2.5rem);
-}
-
-.hotline-grid .safety-card {
-  gap: 0.75rem;
-  padding: clamp(1.5rem, 2.5vw, 2rem);
-}
-
-.hotline-grid .safety-card p {
-  font-size: 0.92rem;
-}
-
-.hotline-grid .safety-card ul {
-  gap: 0.45rem;
-}
-
-.hotline-grid .safety-card li {
-  font-size: 0.85rem;
-}
-
-.hotline-footer {
+.hotline-chip-row {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.hotline-chip {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: clamp(1.75rem, 3vw, 2.5rem);
-  padding: 1.25rem 1.5rem;
-  border-radius: 1.5rem;
-  background: rgba(8, 15, 28, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  box-shadow: 0 25px 60px -45px rgba(59, 130, 246, 0.4);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999rem;
+  background: rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: rgba(219, 234, 254, 0.95);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.hotline-footer p {
+.hotline-note {
   margin: 0;
-  color: rgba(203, 213, 225, 0.9);
-  font-size: 0.92rem;
-  max-width: 32rem;
+  font-size: 0.85rem;
+  color: rgba(203, 213, 225, 0.85);
 }
 
-.hotline-footer .emergency-call {
-  padding: 0.75rem 1.4rem;
-  font-size: 0.95rem;
-}
 .safety-grid {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
@@ -1091,22 +1062,8 @@ main {
     padding: clamp(3rem, 8vw, 4rem);
   }
 
-  .hotline-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hotline-visual {
-    order: -1;
-  }
-
-  .hotline-footer {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .hotline-footer .emergency-call {
-    width: 100%;
+  .hotline-shell {
+    gap: clamp(1.1rem, 5vw, 1.4rem);
   }
 
   .safety-emergency {
