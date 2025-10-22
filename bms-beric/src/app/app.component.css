@@ -659,9 +659,23 @@ main {
   gap: 1.5rem;
 }
 
+.competence-copy.competence-compact {
+  gap: 1rem;
+}
+
+.competence-copy.competence-compact p {
+  line-height: 1.55;
+  margin: 0;
+}
+
 .competence-copy h2 {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   color: #ffffff;
+}
+
+.competence-copy.competence-compact h2 {
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  margin: 0;
 }
 
 .competence-copy p {
@@ -676,6 +690,11 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
+.competence-stats-compact {
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
 .competence-stats strong {
   display: block;
   font-size: 1.8rem;
@@ -683,9 +702,17 @@ main {
   font-weight: 700;
 }
 
+.competence-stats-compact strong {
+  font-size: 1.5rem;
+}
+
 .competence-stats span {
   color: rgba(226, 232, 240, 0.75);
   font-size: 0.95rem;
+}
+
+.competence-stats-compact span {
+  font-size: 0.85rem;
 }
 
 .competence-media {
