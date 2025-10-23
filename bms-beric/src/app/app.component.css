@@ -692,8 +692,21 @@ main {
 }
 
 .competence-stats-compact {
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.competence-stats-compact > div {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1.15rem;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+  justify-items: center;
+  text-align: center;
 }
 
 .competence-stats strong {
@@ -703,17 +716,9 @@ main {
   font-weight: 700;
 }
 
-.competence-stats-compact strong {
-  font-size: 1.5rem;
-}
-
 .competence-stats span {
   color: rgba(226, 232, 240, 0.75);
   font-size: 0.95rem;
-}
-
-.competence-stats-compact span {
-  font-size: 0.85rem;
 }
 
 .competence-media {
@@ -1320,13 +1325,17 @@ main {
 
 .process {
   display: grid;
-  gap: clamp(2.25rem, 5vw, 3.5rem);
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  padding: clamp(2.2rem, 5vw, 3.2rem) clamp(1.25rem, 4vw, 2.6rem);
 }
 
 .process-timeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 2rem;
+  --process-step-min: clamp(11rem, 15vw, 13.5rem);
+  --process-gap: clamp(1.6rem, 3vw, 2.4rem);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--process-gap);
 }
 
 .process-step {
@@ -1337,11 +1346,13 @@ main {
   display: grid;
   gap: 0.75rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  flex: 1 1 var(--process-step-min);
+  min-width: var(--process-step-min);
 }
 
-.process-step::after {
+.process-step::before {
   content: "";
   position: absolute;
   inset: -60% auto auto -60%;
@@ -1350,6 +1361,9 @@ main {
   background: radial-gradient(circle, rgba(249, 115, 22, 0.18), transparent 70%);
   transform: rotate(25deg);
   transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.75;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .process-step:hover {
@@ -1357,9 +1371,29 @@ main {
   border-color: rgba(249, 115, 22, 0.35);
 }
 
-.process-step:hover::after {
+.process-step:hover::before {
   transform: rotate(0deg) translate(15%, -15%);
-  opacity: 0.85;
+  opacity: 0.9;
+}
+
+.process-step > * {
+  position: relative;
+  z-index: 1;
+}
+
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-0.5 * var(--process-gap));
+  width: calc(var(--process-gap) + 1.8rem);
+  height: 1.1rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2756%27%20height%3D%2714%27%20viewBox%3D%270%200%2056%2014%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M2%207h44%27%20stroke%3D%27%2338bdf8%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M43%202l9%205-9%205%27%20stroke%3D%27%23facc15%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20fill%3D%27none%27/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .step-index {
@@ -1749,6 +1783,33 @@ main {
 
   .legal-section {
     padding: 1.75rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .process-timeline {
+    --process-gap: 2.3rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.7rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .process-step {
+    flex: 1 1 auto;
+    min-width: 100%;
+  }
+
+  .process-step:not(:last-child)::after {
+    top: auto;
+    bottom: -2.6rem;
+    right: 50%;
+    left: 50%;
+    width: 1.1rem;
+    height: 2.4rem;
+    transform: translate(-50%, 0);
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2714%27%20height%3D%2760%27%20viewBox%3D%270%200%2014%2060%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M7%204v44%27%20stroke%3D%27%2338bdf8%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M2%2043l5%209%205-9%27%20stroke%3D%27%23facc15%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20fill%3D%27none%27/%3E%3C/svg%3E");
+    background-size: contain;
   }
 }
 
