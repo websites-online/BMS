@@ -544,7 +544,8 @@ main {
 }
 
 .services .section-headline {
-  margin-bottom: clamp(3rem, 6vw, 4rem);
+  gap: 0.6rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 .service-grid {
