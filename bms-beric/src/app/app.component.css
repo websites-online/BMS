@@ -1753,17 +1753,30 @@ main {
 }
 
 @media (max-width: 768px) {
-  .competence-stats-compact {
-    gap: 1rem;
-    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+  .competence-stats.competence-stats-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
   }
 
-  .competence-stats-compact strong {
-    font-size: 1.35rem;
+  .competence-stats.competence-stats-compact > div {
+    flex: 1 1 calc(33.333% - 0.6rem);
+    min-width: calc(33.333% - 0.6rem);
+    padding: 0.85rem 0.6rem;
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+    text-align: center;
   }
 
-  .competence-stats-compact span {
-    font-size: 0.8rem;
+  .competence-stats.competence-stats-compact strong {
+    font-size: 1.28rem;
+  }
+
+  .competence-stats.competence-stats-compact span {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
   }
 
   :host {
@@ -1940,16 +1953,22 @@ main {
 }
 
 @media (max-width: 520px) {
-  .competence-stats-compact {
-    grid-template-columns: repeat(2, minmax(7rem, 1fr));
+  .competence-stats.competence-stats-compact {
+    gap: 0.45rem;
   }
 
-  .competence-stats-compact strong {
-    font-size: 1.15rem;
+  .competence-stats.competence-stats-compact > div {
+    flex: 1 1 calc(33.333% - 0.45rem);
+    min-width: calc(33.333% - 0.45rem);
+    padding: 0.75rem 0.5rem;
   }
 
-  .competence-stats-compact span {
-    font-size: 0.72rem;
+  .competence-stats.competence-stats-compact strong {
+    font-size: 1.12rem;
+  }
+
+  .competence-stats.competence-stats-compact span {
+    font-size: 0.68rem;
   }
 
   .hero {
