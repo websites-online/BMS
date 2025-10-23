@@ -1753,6 +1753,19 @@ main {
 }
 
 @media (max-width: 768px) {
+  .competence-stats-compact {
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+  }
+
+  .competence-stats-compact strong {
+    font-size: 1.35rem;
+  }
+
+  .competence-stats-compact span {
+    font-size: 0.8rem;
+  }
+
   :host {
     --nav-height-mobile: clamp(5rem, 15vw, 6.5rem);
     --nav-height-mobile-shrunk: clamp(3.75rem, 12vw, 4.75rem);
@@ -1927,6 +1940,18 @@ main {
 }
 
 @media (max-width: 520px) {
+  .competence-stats-compact {
+    grid-template-columns: repeat(2, minmax(7rem, 1fr));
+  }
+
+  .competence-stats-compact strong {
+    font-size: 1.15rem;
+  }
+
+  .competence-stats-compact span {
+    font-size: 0.72rem;
+  }
+
   .hero {
     padding: 1.75rem 1.25rem 3.5rem;
     padding-top: 1.75rem;
