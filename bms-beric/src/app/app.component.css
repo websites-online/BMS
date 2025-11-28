@@ -1311,14 +1311,15 @@ main {
 .strip-track {
   display: flex;
   gap: 0;
-  animation: strip 35s linear infinite;
+  animation: strip 14s linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }
 
 .strip-track img {
-  width: 40rem;
-  min-width: 40rem;
+  width: 24rem;
+  min-width: 24rem;
+  height: 12rem;
   object-fit: cover;
   filter: brightness(0.9);
 }
@@ -1975,7 +1976,7 @@ main {
   }
 
   .strip-track {
-    animation-duration: 45s;
+    animation-duration: 10s;
   }
 
   .project-gallery img {
