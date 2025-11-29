@@ -1662,7 +1662,7 @@ main {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -1992,7 +1992,7 @@ main {
   }
 
   .strip-track {
-    animation-duration: 10s;
+    animation-duration: 5s;
   }
 
   .project-gallery img {
@@ -2139,8 +2139,9 @@ main {
   }
 
   .strip-track img {
-    width: 22rem;
-    min-width: 22rem;
+    width: 18rem;
+    min-width: 18rem;
+    height: 10rem;
   }
 
   .process-step {
