@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bms-beric": {
+    "bms": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/bms",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -56,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bms-beric:build:production"
+              "buildTarget": "bms:build:production"
             },
             "development": {
-              "buildTarget": "bms-beric:build:development"
+              "buildTarget": "bms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,8 +86,15 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
