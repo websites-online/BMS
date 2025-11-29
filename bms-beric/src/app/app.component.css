@@ -80,8 +80,8 @@
 
 .brand-mark {
   display: block;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.75rem;
+  height: 3.75rem;
   object-fit: contain;
   padding: 0;
   border-radius: 0;
@@ -1816,8 +1816,8 @@ main {
   }
 
   .brand-mark {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 3rem;
+    height: 3rem;
     padding: 0.25rem;
     border-radius: 0.65rem;
   }
